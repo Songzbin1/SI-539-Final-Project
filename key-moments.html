@@ -50,10 +50,10 @@
         </p>
       </div>
 
-      <img
-        src="img/jhKhero.jpg"
+      <IMG
+        src="IMG/jhKhero.jpg"
         alt="James Harden playmaking illustration showing multiple movement phases"
-        class="km-hero-img"
+        class="km-hero-IMG"
       >
     </section>
 
@@ -69,8 +69,8 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk1.jpg"
+            <IMG
+              src="IMG/jhk1.jpg"
               alt="James Harden winning Sixth Man of the Year"
               class="zoomable"
               tabindex="0"
@@ -93,8 +93,8 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk2.jpg"
+            <IMG
+              src="IMG/jhk2.jpg"
               alt="James Harden after being traded to the Houston Rockets"
               class="zoomable"
               tabindex="0"
@@ -118,16 +118,16 @@
           </div>
           <div class="km-h-card">
             <div class="km-dual-stack">
-              <img
-                src="img/jhk3.jpg"
+              <IMG
+                src="IMG/jhk3.jpg"
                 alt="Graphic of James Harden's historic scoring night"
                 class="zoomable km-back"
                 tabindex="0"
                 role="button"
                 aria-label="Open enlarged image of James Harden's historic scoring night"
               >
-              <img
-                src="img/jhK3（2）.jpg"
+              <IMG
+                src="IMG/jhK3（2）.jpg"
                 alt="James Harden during his MVP season"
                 class="zoomable km-front"
                 tabindex="0"
@@ -151,8 +151,8 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk4.jpg"
+            <IMG
+              src="IMG/jhk4.jpg"
               alt="James Harden in the Western Conference Finals against the Warriors"
               class="zoomable"
               tabindex="0"
@@ -175,8 +175,8 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk5.jpg"
+            <IMG
+              src="IMG/jhk5.jpg"
               alt="Graphic showing James Harden's long 30-point scoring streak"
               class="zoomable"
               tabindex="0"
@@ -199,8 +199,8 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk6.jpg"
+            <IMG
+              src="IMG/jhk6.jpg"
               alt="James Harden playing for the Brooklyn Nets as a primary playmaker"
               class="zoomable"
               tabindex="0"
@@ -223,10 +223,10 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk7.jpg"
+            <IMG
+              src="IMG/jhk7.jpg"
               alt="Graphic showing James Harden entering the NBA all-time scoring top ten"
-              class="zoomable km-poster-img"
+              class="zoomable km-poster-IMG"
               tabindex="0"
               role="button"
               aria-label="Open enlarged image of James Harden entering the NBA all-time scoring top ten"
@@ -247,10 +247,10 @@
             <div class="km-h-dot" aria-hidden="true"></div>
           </div>
           <div class="km-h-card">
-            <img
-              src="img/jhk8.jpg"
+            <IMG
+              src="IMG/jhk8.jpg"
               alt="James Harden returning to the NBA All-Star stage later in his career"
-              class="zoomable km-poster-img"
+              class="zoomable km-poster-IMG"
               tabindex="0"
               role="button"
               aria-label="Open enlarged image of James Harden returning to the NBA All-Star stage later in his career"
@@ -290,7 +290,7 @@
     >
       ×
     </button>
-    <img id="kmLightboxImg" src="" alt="">
+    <IMG id="kmLightboxIMG" src="" alt="">
   </div>
 
   <script>
@@ -303,16 +303,16 @@
     });
 
     const lightbox = document.getElementById('kmLightbox');
-    const lightboxImg = document.getElementById('kmLightboxImg');
+    const lightboxIMG = document.getElementById('kmLightboxIMG');
     const lightboxClose = document.getElementById('kmLightboxClose');
     const zoomables = document.querySelectorAll('.zoomable');
 
     let lastFocusedImage = null;
 
-    function openLightbox(triggerImg) {
-      lastFocusedImage = triggerImg;
-      lightboxImg.src = triggerImg.src;
-      lightboxImg.alt = triggerImg.alt;
+    function openLightbox(triggerIMG) {
+      lastFocusedImage = triggerIMG;
+      lightboxIMG.src = triggerIMG.src;
+      lightboxIMG.alt = triggerIMG.alt;
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('km-modal-open');
@@ -323,23 +323,23 @@
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('km-modal-open');
-      lightboxImg.src = '';
-      lightboxImg.alt = '';
+      lightboxIMG.src = '';
+      lightboxIMG.alt = '';
 
       if (lastFocusedImage) {
         lastFocusedImage.focus();
       }
     }
 
-    zoomables.forEach((img) => {
-      img.addEventListener('click', () => {
-        openLightbox(img);
+    zoomables.forEach((IMG) => {
+      IMG.addEventListener('click', () => {
+        openLightbox(IMG);
       });
 
-      img.addEventListener('keydown', (e) => {
+      IMG.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openLightbox(img);
+          openLightbox(IMG);
         }
       });
     });
