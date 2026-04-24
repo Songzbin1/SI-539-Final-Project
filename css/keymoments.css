@@ -398,31 +398,56 @@ body.km-modal-open {
   }
 }
 
-@media (max-width: 720px) {
-  .km-hero {
-    padding: 68px 16px 18px;
+.keymoments-page {
+  overflow-x: hidden;
+}
+
+.km-hero {
+  overflow: hidden;
+}
+
+@media (max-width: 1500px) {
+  .km-hero-img {
+    right: 24px;
+    width: 760px;
+    max-width: 42vw;
+    opacity: 0.55;
   }
 
   .km-hero-content h1 {
-    font-size: 2.45rem;
-  }
-
-  .km-intro {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .km-scroll-hint {
-    padding: 0 16px 14px;
+    font-size: clamp(3rem, 4.6vw, 5rem);
+    max-width: 14ch;
   }
 
   .km-horizontal-track {
-    padding: 90px 16px 120px;
-    gap: 24px;
+    gap: 52px;
   }
 
   .km-h-item {
-    flex-basis: 320px;
+    flex-basis: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .km-hero-img {
+    right: -120px;
+    width: 520px;
+    max-width: 70vw;
+    opacity: 0.22;
+  }
+
+  .km-hero-content h1 {
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    line-height: 1.02;
+  }
+
+  .km-horizontal-track {
+    padding: 110px 20px 130px;
+    gap: 28px;
+  }
+
+  .km-h-item {
+    flex-basis: 340px;
   }
 
   .km-h-item.top,
@@ -430,10 +455,7 @@ body.km-modal-open {
     margin-top: 0;
   }
 
-  .km-h-marker {
-    display: none;
-  }
-
+  .km-h-marker,
   .km-horizontal-line {
     display: none;
   }
@@ -441,36 +463,10 @@ body.km-modal-open {
   .km-h-card {
     transform: none !important;
   }
-
-  .km-h-card > img {
-    height: 200px;
-  }
-
-  .km-dual-stack {
-    height: 220px;
-  }
-
-  .km-dual-stack img {
-    width: 68%;
-    height: 150px;
-  }
-
-  .km-h-body h2 {
-    font-size: 1.3rem;
-  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .km-horizontal-track {
-    scroll-behavior: auto;
-  }
-
-  .km-h-card {
-    transition: none;
-  }
-
-  .km-h-card:hover,
-  .km-h-card:focus-within {
-    transform: none !important;
+@media (max-width: 720px) {
+  .km-hero-img {
+    display: none;
   }
 }

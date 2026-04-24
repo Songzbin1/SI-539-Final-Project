@@ -7,6 +7,7 @@
   min-height: 100vh;
   color: #e5e7eb;
   font-family: Inter, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 .assists-nav-wrap {
@@ -18,7 +19,7 @@
   width: 100%;
   min-height: 34vh;
   padding: 92px 36px 18px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .assists-glow {
@@ -53,8 +54,8 @@
 .assists-hero-content h1 {
   margin: 0 0 18px;
   color: #f8fafc;
-  font-size: clamp(3rem, 5vw, 5.8rem);
-  line-height: 0.98;
+  font-size: clamp(3rem, 4.6vw, 5rem);
+  line-height: 1;
   letter-spacing: -0.055em;
   font-weight: 850;
   text-wrap: balance;
@@ -74,6 +75,7 @@
   width: 100%;
   min-height: 1200px;
   padding: 8px 36px 110px;
+  overflow: hidden;
 }
 
 .assist-overlay {
@@ -221,6 +223,7 @@ body.assist-modal-open .assist-overlay {
   --rot: 3deg;
   --z: 9;
 }
+
 .assist-note-6 {
   left: 50%;
   top: 340px;
@@ -229,6 +232,7 @@ body.assist-modal-open .assist-overlay {
   --rot: -6deg;
   --z: 5;
 }
+
 .assist-note-7 {
   left: 50%;
   top: 515px;
@@ -255,12 +259,13 @@ body.assist-modal-open .assist-overlay {
   --rot: 5deg;
   --z: 4;
 }
+
 .assist-note-10 {
   left: 50%;
   top: 520px;
-  --tx: -520px;   /* ⭐ 往左拉 */
+  --tx: -520px;
   --ty: 0px;
-  --rot: -6deg;   /* ⭐ 稍微有点角度更自然 */
+  --rot: -6deg;
   --z: 6;
 }
 
@@ -289,33 +294,45 @@ body.assist-modal-open .assists-board .assist-note:not(.is-active) {
 
 .hero-player {
   position: absolute;
-  right: 10px;
+  right: 0;
   top: 60px;
-
-  width: 700px;
-  height: 1300px;
-
-  opacity: 0.7;
+  width: 520px;
+  height: auto;
+  opacity: 0.55;
   filter: brightness(1);
-
   mix-blend-mode: lighten;
-
   pointer-events: none;
   z-index: 1;
 }
 
 .assist-side-image-left {
   position: absolute;
-  left: 20px;
+  left: 0;
   top: 180px;
-  width: 1200px;
+  width: 900px;
   height: auto;
-
-  opacity: 0.45;
+  opacity: 0.32;
   filter: brightness(1.5);
-
   pointer-events: none;
   z-index: 1;
+}
+
+@media (max-width: 1500px) {
+  .hero-player {
+    width: 520px;
+    right: 0;
+    opacity: 0.55;
+  }
+
+  .assist-side-image-left {
+    width: 900px;
+    left: 0;
+    opacity: 0.32;
+  }
+
+  .assists-hero-content h1 {
+    font-size: clamp(3rem, 4.6vw, 5rem);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -354,12 +371,36 @@ body.assist-modal-open .assists-board .assist-note:not(.is-active) {
   .assist-note-8 { --tx: -95px; }
   .assist-note-9 { --tx: 125px; }
 
+  .hero-player {
+    width: 460px;
+    right: -40px;
+    opacity: 0.42;
+  }
+
+  .assist-side-image-left {
+    width: 760px;
+    opacity: 0.24;
+  }
+
   .assist-note.is-active {
     width: min(430px, calc(100vw - 28px));
   }
 
   .assist-note.is-active img {
     height: 255px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-player {
+    width: 420px;
+    right: -80px;
+    opacity: 0.35;
+  }
+
+  .assist-side-image-left {
+    width: 720px;
+    opacity: 0.22;
   }
 }
 
@@ -370,7 +411,24 @@ body.assist-modal-open .assists-board .assist-note:not(.is-active) {
   }
 
   .assists-hero-content h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2.45rem, 7vw, 3.4rem);
+    line-height: 1.02;
+  }
+
+  .assist-intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 68ch;
+  }
+
+  .hero-player {
+    width: 360px;
+    right: -120px;
+    opacity: 0.22;
+  }
+
+  .assist-side-image-left {
+    display: none;
   }
 
   .assists-board-section {
@@ -420,12 +478,20 @@ body.assist-modal-open .assists-board .assist-note:not(.is-active) {
   }
 
   .assists-hero-content h1 {
-    font-size: 2.45rem;
+    font-size: clamp(2.15rem, 10vw, 2.8rem);
+    line-height: 1.03;
   }
 
   .assist-intro {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .hero-player {
+    width: 300px;
+    right: -120px;
+    top: 80px;
+    opacity: 0.16;
   }
 
   .assists-board-section {
@@ -437,8 +503,16 @@ body.assist-modal-open .assists-board .assist-note:not(.is-active) {
     gap: 18px;
   }
 
+  .assist-note {
+    border-radius: 24px;
+  }
+
   .assist-note h2 {
     font-size: 1.3rem;
+  }
+
+  .assist-note p {
+    font-size: 0.94rem;
   }
 
   .assist-note img {
