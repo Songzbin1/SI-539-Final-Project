@@ -131,10 +131,16 @@ body.assist-modal-open .assist-overlay {
   object-fit: cover;
   display: block;
   transition: transform 0.32s ease;
+
+  position: relative;
+  z-index: 1;
 }
 
 .assist-note-body {
   padding: 20px 20px 18px;
+
+  position: relative;
+  z-index: 3;
 }
 
 .assist-note h2 {
@@ -156,6 +162,9 @@ body.assist-modal-open .assist-overlay {
 }
 
 .assist-link {
+  position: relative;
+  z-index: 4;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -177,6 +186,15 @@ body.assist-modal-open .assist-overlay {
 .assist-link:focus-visible {
   outline: 3px solid #38bdf8;
   outline-offset: 3px;
+}
+.assist-open-btn {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .assist-note-1 {
